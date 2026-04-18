@@ -1,57 +1,96 @@
 body {
   font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
   padding: 20px;
-  background: #f5f5f5;
-}
-
-h1 {
   text-align: center;
 }
 
+h1 {
+  margin-bottom: 20px;
+}
+
+/* CONTAINER DO FORM */
 form {
   display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
   justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
-input, select, button {
-  padding: 8px;
+/* INPUTS E SELECT */
+input, select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  min-width: 150px;
+  font-size: 14px;
 }
 
+/* INPUT BUSCA */
+#busca {
+  min-width: 200px;
+}
+
+/* BOTÃO ADICIONAR */
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* LISTA */
 ul {
   list-style: none;
   padding: 0;
+  max-width: 600px;
+  margin: auto;
 }
 
+/* ITEM */
 li {
+  background: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
-  margin: 10px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* TEXTO */
+li strong {
+  font-size: 16px;
 }
 
 /* BOTÕES */
-button {
+li button {
   border: none;
-  cursor: pointer;
   border-radius: 50%;
-  padding: 8px;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* ÍCONES DENTRO DOS BOTÕES */
-button img {
-  width: 20px;
-  height: 20px;
+/* CORES DOS BOTÕES */
+.btn-edit {
+  background-color: #2196F3;
 }
-.btn-edit{
-  background-color: #f5f5f5;
-}
+
 .btn-status {
   background-color: #4CAF50;
 }
@@ -60,6 +99,12 @@ button img {
   background-color: #f44336;
 }
 
-button:hover {
+li button:hover {
   opacity: 0.8;
+}
+
+/* AGRUPAR BOTÕES */
+li div {
+  display: flex;
+  gap: 5px;
 }
