@@ -1,4 +1,4 @@
-# 🎬 App de Mídias (Frontend - PWA)
+# App de Mídias (Frontend - PWA)
 
 Este é o frontend da aplicação **App de Mídias**, onde o usuário pode cadastrar, visualizar, atualizar e remover filmes e séries.
 
