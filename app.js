@@ -87,6 +87,36 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Erro ao atualizar:", error);
     }
   }
+  // função de edição
+  function editarMidia(m) {
+  const novoTitulo = prompt("Novo título:", m.titulo);
+  const novoGenero = prompt("Novo gênero:", m.gender);
+  const novoTipo = prompt("Tipo (Filme ou Serie):", m.type);
+
+  if (!novoTitulo || !novoGenero || !novoTipo) return;
+
+  atualizarMidia(m._id, {
+    titulo: novoTitulo,
+    gender: novoGenero,
+    type: novoTipo
+  });
+}
+//função atualizar
+async function atualizarMidia(id, dados) {
+  try {
+    await fetch(`${API_URL}/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(dados)
+    });
+
+    carregarMidias();
+  } catch (error) {
+    console.error("Erro ao atualizar:", error);
+  }
+}
 
   // Renderizar lista
   function render() {
@@ -106,6 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       li.querySelector(".btn-status").onclick = () => toggleStatus(m);
       li.querySelector(".btn-delete").onclick = () => deletar(m._id);
+      li.querySelector(".btn-edit").onclick = () => editarMidia(m);
 
       lista.appendChild(li);
     });
