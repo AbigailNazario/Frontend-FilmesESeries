@@ -8,12 +8,12 @@
   "description": "Aplicativo para visualizar listagem de filmes e series",
   "icons": [
     {
-      "src": "icons/icon-192.png",
+      "src": "icons/movie-clapper-open (1).png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "icons/icon-512.png",
+      "src": "icons/movie-clapper-open.png",
       "sizes": "512x512",
       "type": "image/png"
     }
