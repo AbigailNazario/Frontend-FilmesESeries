@@ -141,6 +141,9 @@ async function atualizarMidia(id, dados) {
       lista.appendChild(li);
     });
   }
+  if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/service-worker.js");
+}
 
   // Inicializar
   carregarMidias();
