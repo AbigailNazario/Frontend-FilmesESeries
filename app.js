@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  const API_URL = "http://localhost:3000";
+  const API_URL = "https://backend-filmeseseries.onrender.com";
 
   const lista = document.getElementById("lista");
   const form = document.getElementById("form");
