@@ -25,8 +25,41 @@ ul {
 }
 
 li {
-  background: white;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+/* BOTÕES */
+button {
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ÍCONES DENTRO DOS BOTÕES */
+button img {
+  width: 20px;
+  height: 20px;
+}
+.btn-edit{
+  background-color: #f5f5f5;
+}
+.btn-status {
+  background-color: #4CAF50;
+}
+
+.btn-delete {
+  background-color: #f44336;
+}
+
+button:hover {
+  opacity: 0.8;
 }
