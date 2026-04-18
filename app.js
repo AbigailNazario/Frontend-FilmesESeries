@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const lista = document.getElementById("lista");
   const form = document.getElementById("form");
+  const buscaInput = document.getElementById("busca");
 
   let midias = [];
 
@@ -122,7 +123,7 @@ async function atualizarMidia(id, dados) {
   function render() {
     lista.innerHTML = "";
 
-    midias.forEach((m) => {
+    listaFiltrada.forEach((m) => {
       const li = document.createElement("li");
 
       li.innerHTML = `
@@ -141,11 +142,26 @@ async function atualizarMidia(id, dados) {
       lista.appendChild(li);
     });
   }
+
+  function filtrarMidias() {
+  const termo = buscaInput.value.toLowerCase();
+
+  const filtradas = midias.filter((m) =>
+    m.titulo.toLowerCase().includes(termo)
+  );
+
+  render(filtradas);
+}
   if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("/service-worker.js");
 }
 
   // Inicializar
   carregarMidias();
+
+  // Inicializar
+carregarMidias();
+
+buscaInput.addEventListener("input", filtrarMidias);
 
 });
